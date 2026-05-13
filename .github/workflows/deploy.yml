@@ -16,12 +16,21 @@ jobs:
       - run: npm install
       - run: npm run build
       - uses: actions/configure-pages@v4
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          artifact_name: github-pages
 
   deploy:
     needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/deploy-pages@v1
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
