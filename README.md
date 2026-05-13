@@ -1,44 +1,48 @@
-# Ross Rabanos
-This is my **personal portfolio website** built with **React** to showcase my projects, coding style, and technical skills.  
-It also serves as a **code portfolio** demonstrating my approach to building scalable, maintainable front-end applications.
+# Ross Rabanos — Senior React Native Developer Portfolio
 
----
+A production-ready static portfolio built with React, Vite, TypeScript, Tailwind CSS, Framer Motion, and Lucide React. The site is designed for GitHub Pages deployment and showcases mobile app case studies, interactive demo flows, and hiring-focused content.
 
-##  Features
+## Setup
 
-- **Responsive Design** — Works on desktop, tablet, and mobile
-- **Reusable Components** — ProjectCard, Layout, Button, etc.
-- **Project Data from Central Source** — No hardcoding across components
-- **Dark Mode Toggle** — Saved to localStorage
-- **Framer Motion Animations** — Smooth UI interactions
-- **Accessible** — Semantic HTML, keyboard navigation, alt texts
-- **Deployed with** Vercel / GitHub Pages
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
----
+2. Run locally:
+   ```bash
+   npm run dev
+   ```
 
-## 🛠 Tech Stack
+3. Build for production:
+   ```bash
+   npm run build
+   ```
 
-**Frontend:**
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [React Router](https://reactrouter.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [React Icons](https://react-icons.github.io/react-icons/)
+## GitHub Pages Deployment
 
-**Development Tools:**
-- ESLint + Prettier
-- Git & GitHub
-- Vercel / GitHub Pages
+The site is configured to deploy on GitHub Pages using the `vite.config.ts` base path.
 
----
+1. In `vite.config.ts`, replace `/portfolio/` with `/<your-repository-name>/`.
+2. Add your resume file at `public/resume.pdf`.
+3. Push to the `main` branch.
+4. GitHub Actions will build and deploy the site automatically.
+5. In repository settings, enable GitHub Pages and select the `gh-pages` deployment source if needed.
 
-## 📂 Project Structure
-```plaintext
-src/
-  assets/          # Images, screenshots
-  components/      # Reusable UI components
-  data/            # Centralized project info
-  pages/           # Page components
-  App.jsx          # Route definitions
-  main.jsx         # Entry point
+## Update Personal Info
+
+- Replace the placeholder email in `src/data/portfolio.ts`
+- Replace the GitHub and LinkedIn links in `src/data/portfolio.ts`
+- Replace the resume file path in `src/components/Resume.tsx` or `public/resume.pdf`
+
+## Project Structure
+
+- `src/components` — Reusable UI sections and demo components
+- `src/data` — Editable portfolio content and interactive demo data
+- `public` — Static assets including `resume.pdf`
+- `.github/workflows/deploy.yml` — GitHub Pages deployment workflow
+
+## Notes
+
+This portfolio is built as a static frontend only. There are no backend features or API calls. All demo interactions are powered by local mock data and React state.
+
